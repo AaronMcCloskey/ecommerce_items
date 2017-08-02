@@ -13,7 +13,7 @@ grunt.initConfig({
     },
     pages: {
       options: {
-        remote: 'git@github.com:example_user/example_webapp.git',
+        remote: 'git@github.com:AaronMcCloskey/ecommerce_items.git',
         branch: 'gh-pages'
       }
     },
@@ -32,4 +32,6 @@ grunt.initConfig({
     }
   }
 });
+
+    grunt.loadNpmTasks('grunt-build-control');
 };
