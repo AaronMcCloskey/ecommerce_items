@@ -13,7 +13,7 @@ grunt.initConfig({
     },
     pages: {
       options: {
-        remote: 'git@github.com:AaronMcCloskey/ecommerce_items.git',
+        remote: 'https://github.com/AaronMcCloskey/ecommerce_items.git',
         branch: 'gh-pages'
       }
     },
