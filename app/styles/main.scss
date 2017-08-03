@@ -1,91 +1,362 @@
 // bower:scss
 @import "bower_components/bootstrap/scss/bootstrap.scss";
+@import "bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
-
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
-
-/* Space out content a bit */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:500');
+$cinza-01: #383A3F;
+$rosa: #e85a71;
+$cinza-02: #343838;
+$cinza-03: #e4e7ec;
+$black: #202020;
+$white: #fff;
+$dark-grey01: #1a1a1a;
+$dark-grey02: #2c2c2c;
+$crimson: #da314a;
+$gainsboro: #d8d8d8;
 body {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #211e1f
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-right: 1rem;
-  padding-left: 1rem;
+.results {
+    width: 100%;
+    display: block;
 }
 
-/* Custom page header */
-.header {
-  padding-bottom: 1rem;
-  border-bottom: .05rem solid #e5e5e5;
+.wrapper {
+    width: 33.333%;
+    float: left;
+    padding: 1em;
+    margin: auto;
+    display: inline-block;
 }
 
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 3rem;
+.item {
+    overflow: hidden;
+    box-shadow: 0 0 40px darken($black, 50);
+    margin: 0 auto;
+    background-color: $dark-grey02;
+    border-radius: 3%;
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 1.5rem;
-  color: #777;
-  border-top: .05rem solid #e5e5e5;
+.phone-bar {
+    padding: 1em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    color: $white;
+    background-color: $black;
+    .right-icons {
+        float: right;
+    }
+    span {
+        margin: auto;
+        margin-left: 48px;
+        font-size: 0.6em;
+    }
+    h3 {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        font-size: 0.6em;
+    }
+    .fa {
+        font-size: 0.5em;
+    }
 }
 
-/* Customize container */
-@media (min-width: 48em) {
-  .container {
-    max-width: 46rem;
-  }
-}
-.container-narrow > hr {
-  margin: 2rem 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: .05rem solid #e5e5e5;
-}
-.jumbotron .btn {
-  padding: .75rem 1.5rem;
-  font-size: 1.5rem;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 3rem 0;
-}
-.marketing p + h4 {
-  margin-top: 1.5rem;
+.navbar {
+    padding: 1em;
+    color: $gainsboro;
+    display: block;
+    background-color: $black;
+    height: 5em;
+    span {
+        margin: auto;
+        font-weight: 300;
+        display: inline-block;
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        padding: 1em;
+    }
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 48em) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-right: 0;
-    padding-left: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 2rem;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+.cart-notification {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $crimson;
+    position: relative;
+    top: -38px;
+    left: 315px;
+}
+
+.cart-notification::before {
+    content: '2';
+    color: $gainsboro;
+    font-size: 0.5em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -1px;
+    right: 3px;
+}
+
+.card {
+    width: 80%;
+    height: 27em;
+    box-shadow: 0 0 40px $dark-grey01;
+    position: relative;
+    top: -5px;
+    left: 0px;
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 3%;
+    z-index: 10;
+    background-color: $dark-grey02;
+    -vendor-fadeInRight-duration: 10s;
+    -vendor-fadeInRight-delay: 10s;
+    -vendor-fadeInRight-iteration-count: infinite;
+}
+
+.card-icons {
+    width: 100%;
+    display: block;
+}
+
+.card-page {
+    color: #d8d8d8;
+    font-size: 0.8em;
+    display: inline-block;
+    width: 50%;
+    padding: 1em;
+    margin: auto;
+    .page {
+        margin: 0 auto;
+    }
+}
+
+.card-stars {
+    color: #d8d8d8;
+    font-size: 0.8em;
+    width: 50%;
+    float: right;
+    padding: 1em;
+    margin: auto;
+    display: inline-block;
+    text-align: right;
+    .fa-star {
+        color: $crimson;
+    }
+}
+
+.crimson-stripe {
+    content: '';
+    width: 100%;
+    height: 8em;
+    color: $crimson;
+    position: relative;
+    top: 70px;
+    margin-bottom: -100px;
+    background-color: $crimson;
+    //z-index: -1;
+    overflow: hidden;
+}
+
+.content {
+    z-index: 5;
+}
+
+.dash {
+    background-color: $gainsboro;
+    width: 70px;
+    height: 4px;
+    margin-left: 1.5em;
+    margin-top: 2em;
+}
+
+.author {
+    display: flex;
+    text-align: center;
+    padding-bottom: 1em;
+    p {
+        color: $gainsboro;
+        font-size: 1em;
+        font-weight: 600;
+        position: relative;
+        top: 0px;
+        margin: auto;
+    }
+    .ion-ios-arrow-thin-right {
+        color: $gainsboro;
+        font-size: 2.5em;
+        position: relative;
+        margin: auto;
+        margin-right: 0.5em;
+        top: 5px;
+    }
+}
+
+.detail {
+    text-transform: uppercase;
+    font-size: 3em;
+    font-weight: 600;
+    padding: 0;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    top: -220px;
+    color: lighten($dark-grey01, 4);
+    z-index: 0;
+}
+
+.detail-image {
+    padding: 0;
+    img {
+        position: relative;
+        padding: 0;
+        height: 196px;
+        width: 128px;
+        margin: 0 auto;
+        display: block;
+        z-index: 10;
+    }
+}
+
+.detail-text {
+    color: $gainsboro;
+    position: relative;
+    font-size: 0.8em;
+    padding: 1em;
+    font-weight: 300;
+    p {
+        display: block;
+        display: -webkit-box;
+        height: 4.5em;
+        margin: 0 auto;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.specs-buttons {
+    position: relative;
+    height: 20px;
+    top: -250px;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: 1em;
+    display: flex;
+}
+
+.size {
+    border: 2px solid lighten(#2c2c2c, 10);
+    display: flex;
+    padding-bottom: 0;
+    height: 30px;
+    width: 115px;
+    align-items: center;
+    h2 {
+        color: $gainsboro;
+        font-size: 0.7em;
+        font-weight: 600;
+        padding-left: 1em;
+        padding-right: 6em;
+        padding-bottom: 0px;
+    }
+}
+
+.quantity {
+    border: 2px solid lighten(#2c2c2c, 10);
+    display: flex;
+    height: 30px;
+    width: 115px;
+    margin: auto;
+    margin-right: 0.5em;
+    align-items: center;
+    h2 {
+        font-size: 0.7em;
+        color: $gainsboro;
+        font-weight: 600;
+        padding-left: 1em;
+        padding-right: 4em;
+    }
+}
+
+.size-triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 9px 9px;
+    border-color: transparent transparent $gainsboro transparent;
+    position: relative;
+    top: 5px;
+    right: -3px;
+}
+
+.quantity-triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 9px 9px;
+    border-color: transparent transparent $gainsboro transparent;
+    position: relative;
+    top: 5px;
+    right: 1px;
+}
+
+.add-button {
+    background-color: $crimson;
+    position: relative;
+    height: 40px;
+    align-items: center;
+    display: flex;
+    margin-left: 1em;
+    margin-right: 1em;
+    border: none;
+    cursor: pointer;
+    &:hover {
+        background-color: $rosa;
+        transition: 200ms ease-in-out;
+        text-decoration: none;
+        span {
+            font-size: 1em;
+            transition: 200ms ease-in-out;
+        }
+    }
+    span {
+        color: $gainsboro;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 1020px) {
+    .navbar span {
+        transition: 300ms ease-in-out;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 800px) {
+    .wrapper {
+        width: 50%;
+        transition: 300ms ease-in-out;
+    }
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        width: 100%;
+        transition: 300ms ease-in-out;
+    }
 }
